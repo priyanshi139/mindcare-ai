@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { Bar, BarChart, CartesianGrid, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 import { api } from '../services/http'
 import { useAuth } from '../store/auth'
+import { Extras } from '../components/Extras'
 
 interface Summary { series: { date: string; v: number; sleep_h: number | null; stress: number | null }[]; moods: number; avg7: number | null; last: { score: number; category: string; created: string } | null; change: number | null }
 const card = 'rounded-3xl border border-line bg-white p-6'
@@ -49,6 +50,7 @@ export default function Overview() {
           {sleep.length === 0 ? <p className="text-mute">Add sleep hours in a mood check-in.</p> : <div className="h-48"><ResponsiveContainer><BarChart data={sleep}><XAxis dataKey="d" /><YAxis /><Tooltip /><Bar dataKey="h" fill="#2A6F6B" radius={[6, 6, 0, 0]} /></BarChart></ResponsiveContainer></div>}
         </section>
       </div>
+      <Extras />
     </div>
   )
 }

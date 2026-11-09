@@ -7,7 +7,7 @@ const input = 'mt-1.5 block min-h-12 w-full rounded-xl border border-line bg-whi
 
 export default function Auth({ mode }: { mode: 'login' | 'signup' }) {
   const su = mode === 'signup'
-  const { signup, login, demo } = useAuth()
+  const { signup, login } = useAuth()
   const nav = useNavigate()
   const [err, setErr] = useState('')
   const [show, setShow] = useState(false)
@@ -21,13 +21,13 @@ export default function Auth({ mode }: { mode: 'login' | 'signup' }) {
     if (su) {
       if (name.length < 2) return setErr('Enter your full name.')
       if (pw !== f.get('pw2')) return setErr('Passwords do not match.')
-      const m = await signup(name, email, pw, f.get('role') as Role)
+      const m = await signup(name, email, pw, 'Patient' as Role)
       if (m) return setErr(m)
     } else {
       const m = await login(email, pw)
       if (m) return setErr(m)
     }
-    nav('/dashboard')
+    nav(su ? '/onboarding' : '/dashboard')
   }
 
   const pt = show ? 'text' : 'password'
@@ -43,16 +43,15 @@ export default function Auth({ mode }: { mode: 'login' | 'signup' }) {
           <label className="mb-3 block text-sm font-semibold">Password<input name="pw" type={pt} className={input} /></label>
           {su && <>
             <label className="mb-3 block text-sm font-semibold">Confirm password<input name="pw2" type={pt} className={input} /></label>
-            <label className="mb-3 block text-sm font-semibold">I am a<select name="role" className={input}><option>Patient</option><option>Caregiver</option><option>Doctor</option></select></label>
           </>}
           <p role="alert" className="mb-2 min-h-5 text-sm text-red-700">{err}</p>
           <button className="min-h-12 w-full rounded-xl bg-forest font-semibold text-white" type="submit">{su ? 'Sign up' : 'Log in'}</button>
         </form>
+        {!su && <p className="mb-0 mt-3 text-sm"><Link className="font-semibold text-teal" to="/forgot">Forgot password?</Link></p>}
         <div className="mt-4 flex flex-wrap items-center justify-between gap-2 text-sm">
           <label className="flex items-center gap-2"><input type="checkbox" onChange={(e) => setShow(e.target.checked)} /> Show password</label>
           <Link className="font-semibold text-teal" to={su ? '/login' : '/signup'}>{su ? 'Have an account? Log in' : 'Create account'}</Link>
         </div>
-        {!su && <button type="button" onClick={async () => { await demo(); nav('/dashboard') }} className="mt-4 min-h-11 w-full rounded-xl border border-forest font-semibold text-forest">Use development demo account</button>}
       </div>
     </div>
   )

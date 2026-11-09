@@ -8,3 +8,4 @@ dist
 backend/*.db
 __pycache__/
 .venv/
+backend/.env

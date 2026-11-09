@@ -2,6 +2,8 @@ import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 
 export type Role = 'Patient' | 'Caregiver' | 'Doctor'
+// 'Patient' is the internal role value; the interface shows 'Member'.
+export const roleLabel = (r?: string) => (r === 'Patient' ? 'Member' : r ?? '')
 interface User { id: number; name: string; email: string; role: Role }
 interface AuthState {
   token: string | null
@@ -9,7 +11,6 @@ interface AuthState {
   session: boolean
   signup: (name: string, email: string, pw: string, role: Role) => Promise<string | null>
   login: (email: string, pw: string) => Promise<string | null>
-  demo: () => Promise<void>
   logout: () => void
 }
 
@@ -33,11 +34,6 @@ export const useAuth = create<AuthState>()(
         },
         login: async (email, password) => {
           try { const r = await call('/api/auth/login', { email, password }); if (!r.ok) return r.msg; ok(r.d); return null } catch { return NET }
-        },
-        // Development convenience account, created on the backend like any other user.
-        demo: async () => {
-          const p = { name: 'Demo User', email: 'demo@mindcare.test', password: 'demo-password-1', role: 'Patient' }
-          try { let r = await call('/api/auth/signup', p); if (r.status === 409) r = await call('/api/auth/login', p); if (r.ok) ok(r.d) } catch { /* backend offline */ }
         },
         logout: () => set({ token: null, user: null, session: false }),
       }

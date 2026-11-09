@@ -12,6 +12,7 @@ export default function Mood() {
   const [stress, setStress] = useState('')
   const [note, setNote] = useState('')
   const [msg, setMsg] = useState('')
+  const [editId, setEditId] = useState<number | null>(null)
   const load = useCallback(() => { api<Entry[]>('/api/mood').then(setList).catch((e) => setMsg(e.message)) }, [])
   useEffect(load, [load])
 
@@ -19,10 +20,12 @@ export default function Mood() {
     if (!v) return setMsg('Pick a mood first.')
     if (sleep && (+sleep < 0 || +sleep > 24)) return setMsg('Sleep must be between 0 and 24 hours.')
     try {
-      await api('/api/mood', { method: 'POST', body: JSON.stringify({ v, sleep_h: sleep ? +sleep : null, stress: stress ? +stress : null, note }) })
-      setV(0); setSleep(''); setStress(''); setNote(''); setMsg('Check-in saved. Your dashboard has been updated.'); load()
+      await api(editId ? `/api/mood/${editId}` : '/api/mood', { method: editId ? 'PATCH' : 'POST', body: JSON.stringify({ v, sleep_h: sleep ? +sleep : null, stress: stress ? +stress : null, note }) })
+      setV(0); setSleep(''); setStress(''); setNote(''); setMsg(editId ? 'Entry updated.' : 'Check-in saved. Your dashboard has been updated.'); setEditId(null); load()
     } catch (e) { setMsg((e as Error).message) }
   }
+  function edit(e: Entry) { setEditId(e.id); setV(e.v); setSleep(e.sleep_h != null ? String(e.sleep_h) : ''); setStress(e.stress != null ? String(e.stress) : ''); setNote(e.note); setMsg('Editing an entry.'); window.scrollTo(0, 0) }
+  function cancel() { setEditId(null); setV(0); setSleep(''); setStress(''); setNote(''); setMsg('') }
   async function del(id: number) { await api(`/api/mood/${id}`, { method: 'DELETE' }); load() }
 
   const chart = [...(list ?? [])].reverse().map((e) => ({ d: e.created.slice(5, 10), mood: e.v }))
@@ -40,7 +43,7 @@ export default function Mood() {
         </div>
         <label className="mt-3 block text-sm font-semibold" htmlFor="note">Journal (optional)</label>
         <textarea id="note" value={note} maxLength={300} onChange={(e) => setNote(e.target.value)} rows={3} className="mt-1.5 w-full rounded-xl border border-line p-3" />
-        <div className="mt-3 flex flex-wrap items-center gap-3"><button onClick={save} className="min-h-11 rounded-xl bg-forest px-5 font-semibold text-white">Save check-in</button><span role="status" className="text-sm text-mute">{msg}</span></div>
+        <div className="mt-3 flex flex-wrap items-center gap-3"><button onClick={save} className="min-h-11 rounded-xl bg-forest px-5 font-semibold text-white">{editId ? 'Update entry' : 'Save check-in'}</button>{editId && <button onClick={cancel} className="min-h-11 rounded-xl border border-line px-4 text-mute">Cancel</button>}<span role="status" className="text-sm text-mute">{msg}</span></div>
       </section>
       <section className="mt-4 rounded-3xl border border-line bg-white p-6">
         <p className="m-0 mb-2 text-xs font-bold tracking-widest text-mute uppercase">Mood trend</p>
@@ -51,7 +54,7 @@ export default function Mood() {
         {list === null ? <p className="text-mute">Loading…</p> : list.length === 0 ? <p className="text-mute">No check-ins yet.</p> : list.slice(0, 10).map((e) => (
           <div key={e.id} className="flex items-center justify-between gap-3 border-b border-line py-2 last:border-0">
             <span>{e.created.slice(0, 10)} · {moods[e.v - 1]}{e.sleep_h != null ? ` · ${e.sleep_h} h sleep` : ''}{e.stress != null ? ` · stress ${e.stress}` : ''}<span className="block text-sm text-mute">{e.note}</span></span>
-            <button onClick={() => del(e.id)} className="min-h-10 rounded-xl border border-forest px-3 text-sm font-semibold text-forest" aria-label="Delete entry">Delete</button>
+            <span className="flex gap-2"><button onClick={() => edit(e)} className="min-h-10 rounded-xl border border-forest px-3 text-sm font-semibold text-forest">Edit</button><button onClick={() => del(e.id)} className="min-h-10 rounded-xl border border-line px-3 text-sm text-mute" aria-label="Delete entry">Delete</button></span>
           </div>
         ))}
       </section>
