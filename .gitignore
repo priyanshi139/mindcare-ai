@@ -1,0 +1,45 @@
+# Dependencies
+node_modules/
+.pnp/
+.pnp.js
+
+# Production build outputs
+dist/
+build/
+
+# Environment secrets and credentials (CRITICAL: Do not commit keys to GitHub)
+.env
+.env.*
+backend/.env
+backend/.env.*
+
+# Local databases & personal health records
+*.db
+*.sqlite3
+backend/*.db
+backend/*.sqlite3
+
+# Python bytecode & virtual environments
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.venv/
+venv/
+ENV/
+env/
+
+# Large ML Datasets & Raw Archives (Exceeds GitHub 100MB limit)
+ml_pipeline/data/
+*.zip
+*.pkl
+*.parquet
+*.tsv
+!backend/outputs/models/final_feature_list.txt
+
+# OS & Editor files
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/

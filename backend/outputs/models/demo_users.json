@@ -1,0 +1,281 @@
+{
+  "method": "SHAP TreeExplainer",
+  "thresholds": {
+    "moderate": 0.2387,
+    "high": 0.4171
+  },
+  "users": [
+    {
+      "label": "Demo user A",
+      "probability": 0.06,
+      "level": "low",
+      "questionnaire_start": 1.0,
+      "questionnaire_end_for_evaluation_only": 4.0,
+      "factors": [
+        {
+          "name": "steps rolling 6 sum max intercept",
+          "direction": "lowers",
+          "size": 0.369
+        },
+        {
+          "name": "birthyear",
+          "direction": "lowers",
+          "size": 0.365
+        },
+        {
+          "name": "money worries",
+          "direction": "lowers",
+          "size": 0.33
+        },
+        {
+          "name": "migraine history",
+          "direction": "lowers",
+          "size": 0.23
+        },
+        {
+          "name": "comorbid arthritis",
+          "direction": "raises",
+          "size": 0.21
+        }
+      ]
+    },
+    {
+      "label": "Demo user B",
+      "probability": 0.101,
+      "level": "low",
+      "questionnaire_start": 7.0,
+      "questionnaire_end_for_evaluation_only": 6.0,
+      "factors": [
+        {
+          "name": "birthyear",
+          "direction": "lowers",
+          "size": 0.743
+        },
+        {
+          "name": "comorbid neuropathic",
+          "direction": "raises",
+          "size": 0.385
+        },
+        {
+          "name": "money worries",
+          "direction": "lowers",
+          "size": 0.278
+        },
+        {
+          "name": "migraine history",
+          "direction": "raises",
+          "size": 0.187
+        },
+        {
+          "name": "num migraine days",
+          "direction": "lowers",
+          "size": 0.187
+        }
+      ]
+    },
+    {
+      "label": "Demo user C",
+      "probability": 0.211,
+      "level": "low",
+      "questionnaire_start": 5.0,
+      "questionnaire_end_for_evaluation_only": 0.0,
+      "factors": [
+        {
+          "name": "birthyear",
+          "direction": "lowers",
+          "size": 0.24
+        },
+        {
+          "name": "comorbid neuropathic",
+          "direction": "lowers",
+          "size": 0.206
+        },
+        {
+          "name": "migraine history",
+          "direction": "lowers",
+          "size": 0.181
+        },
+        {
+          "name": "steps rolling 6 sum max intercept",
+          "direction": "lowers",
+          "size": 0.175
+        },
+        {
+          "name": "money worries",
+          "direction": "raises",
+          "size": 0.144
+        }
+      ]
+    },
+    {
+      "label": "Demo user D",
+      "probability": 0.239,
+      "level": "low",
+      "questionnaire_start": 2.0,
+      "questionnaire_end_for_evaluation_only": 6.0,
+      "factors": [
+        {
+          "name": "money worries",
+          "direction": "lowers",
+          "size": 0.311
+        },
+        {
+          "name": "migraine history",
+          "direction": "lowers",
+          "size": 0.247
+        },
+        {
+          "name": "steps lpa iqr",
+          "direction": "raises",
+          "size": 0.163
+        },
+        {
+          "name": "height",
+          "direction": "lowers",
+          "size": 0.16
+        },
+        {
+          "name": "steps light activity sum intercept",
+          "direction": "lowers",
+          "size": 0.159
+        }
+      ]
+    },
+    {
+      "label": "Demo user E",
+      "probability": 0.239,
+      "level": "low",
+      "questionnaire_start": 3.0,
+      "questionnaire_end_for_evaluation_only": 3.0,
+      "factors": [
+        {
+          "name": "birthyear",
+          "direction": "lowers",
+          "size": 0.555
+        },
+        {
+          "name": "money worries",
+          "direction": "raises",
+          "size": 0.247
+        },
+        {
+          "name": "migraine history",
+          "direction": "lowers",
+          "size": 0.209
+        },
+        {
+          "name": "comorbid neuropathic",
+          "direction": "lowers",
+          "size": 0.181
+        },
+        {
+          "name": "steps rolling 6 sum max intercept",
+          "direction": "raises",
+          "size": 0.123
+        }
+      ]
+    },
+    {
+      "label": "Demo user F",
+      "probability": 0.417,
+      "level": "moderate",
+      "questionnaire_start": 7.0,
+      "questionnaire_end_for_evaluation_only": 2.0,
+      "factors": [
+        {
+          "name": "comorbid neuropathic",
+          "direction": "raises",
+          "size": 0.458
+        },
+        {
+          "name": "migraine history",
+          "direction": "raises",
+          "size": 0.374
+        },
+        {
+          "name": "money worries",
+          "direction": "lowers",
+          "size": 0.282
+        },
+        {
+          "name": "num migraine days",
+          "direction": "raises",
+          "size": 0.271
+        },
+        {
+          "name": "steps streaks countDistinct coeff",
+          "direction": "lowers",
+          "size": 0.195
+        }
+      ]
+    },
+    {
+      "label": "Demo user G",
+      "probability": 0.589,
+      "level": "high",
+      "questionnaire_start": 16.0,
+      "questionnaire_end_for_evaluation_only": 13.0,
+      "factors": [
+        {
+          "name": "steps light activity sum coeff",
+          "direction": "lowers",
+          "size": 0.372
+        },
+        {
+          "name": "num migraine days",
+          "direction": "raises",
+          "size": 0.342
+        },
+        {
+          "name": "migraine history",
+          "direction": "raises",
+          "size": 0.296
+        },
+        {
+          "name": "comorbid neuropathic",
+          "direction": "lowers",
+          "size": 0.124
+        },
+        {
+          "name": "comorbid arthritis",
+          "direction": "raises",
+          "size": 0.123
+        }
+      ]
+    },
+    {
+      "label": "Demo user H",
+      "probability": 0.706,
+      "level": "high",
+      "questionnaire_start": 15.0,
+      "questionnaire_end_for_evaluation_only": 12.0,
+      "factors": [
+        {
+          "name": "comorbid neuropathic",
+          "direction": "raises",
+          "size": 0.505
+        },
+        {
+          "name": "sleep main start hour adj score",
+          "direction": "raises",
+          "size": 0.25
+        },
+        {
+          "name": "migraine history",
+          "direction": "raises",
+          "size": 0.242
+        },
+        {
+          "name": "money worries",
+          "direction": "raises",
+          "size": 0.129
+        },
+        {
+          "name": "average daily steps",
+          "direction": "raises",
+          "size": 0.128
+        }
+      ]
+    }
+  ]
+}

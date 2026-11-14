@@ -1,0 +1,1065 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#173B38">
+  <meta name="description" content="MindSathi AI is a research prototype for mental-wellbeing check-ins, early risk screening and supportive conversation.">
+
+  <title>MindSathi AI — Your wellness space</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="app-shell">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <a class="brand" id="brand-home" href="#home" aria-label="MindSathi AI home">
+      <span class="brand-mark" aria-hidden="true">m</span>
+
+      <span class="brand-copy">
+        <strong>MindSathi <i>AI</i></strong>
+        <small>A little care, every day</small>
+      </span>
+    </a>
+
+    <p class="nav-label">YOUR SPACE</p>
+
+    <nav id="nav" aria-label="Main navigation"></nav>
+
+    <div class="sidebar-bottom">
+
+      <div class="sidebar-note">
+        <span class="note-spark" aria-hidden="true">✦</span>
+        <strong>Small steps count.</strong>
+
+        <p>
+          You do not have to figure everything out today.
+          Start with one honest check-in.
+        </p>
+      </div>
+
+      <p class="sidebar-disclaimer">
+        Research prototype · Not a diagnosis or a replacement for professional care.
+      </p>
+
+    </div>
+  </aside>
+
+
+  <!-- MAIN CONTENT -->
+  <div class="main-panel">
+
+    <!-- TOP HEADER -->
+    <header class="topbar">
+
+      <div>
+        <p class="topbar-kicker">YOUR PERSONAL WELLNESS SPACE</p>
+        <p class="topbar-date" id="date-label">
+          A space to pause and check in
+        </p>
+      </div>
+
+      <div class="topbar-right">
+
+        <span class="status-chip">
+          <span class="status-dot"></span>
+          Check-ins stay in this app
+        </span>
+
+        <span class="prototype-chip">Research prototype</span>
+
+      </div>
+    </header>
+
+
+    <!-- PAGE CONTENT -->
+    <main id="main" class="content-wrap">
+
+
+      <!-- ================= OVERVIEW ================= -->
+      <section id="v-home" class="view-section on">
+
+        <div class="page-heading home-heading">
+
+          <div>
+            <p class="eyebrow">WELCOME TO MINDSATHI</p>
+
+            <h1>
+              A little more connected<br>
+              to how you feel.
+            </h1>
+
+            <p class="page-subtitle">
+              A gentle space for daily reflection, supportive conversations
+              and understanding your wellbeing over time.
+            </p>
+          </div>
+
+          <div class="heading-art" aria-hidden="true">
+            <span class="art-orbit orbit-one"></span>
+            <span class="art-orbit orbit-two"></span>
+            <span class="art-leaf">✳</span>
+
+            <span class="art-caption">
+              pause<br>
+              breathe<br>
+              begin
+            </span>
+          </div>
+
+        </div>
+
+
+        <!-- WELCOME BANNER -->
+        <div class="welcome-banner">
+
+          <div class="welcome-copy">
+
+            <span class="banner-kicker">A MOMENT FOR YOU</span>
+
+            <h2>How are you, really?</h2>
+
+            <p>
+              There is no perfect way to feel.
+              Take a minute to notice what is going on for you today.
+            </p>
+
+            <button class="btn btn-light" id="start-checkin" type="button">
+              Start today's check-in
+              <span aria-hidden="true">→</span>
+            </button>
+
+          </div>
+
+          <div class="welcome-art" aria-hidden="true">
+
+            <div class="sun-disc"></div>
+            <div class="hill hill-back"></div>
+            <div class="hill hill-front"></div>
+
+            <div class="floating-quote">
+              “You deserve<br>
+              a softer moment.”
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- PROJECT WORKFLOW -->
+        <div class="section-heading-row">
+
+          <div>
+            <p class="eyebrow">THE MINDSATHI JOURNEY</p>
+
+            <h2>Support, step by step</h2>
+
+            <p class="section-subtitle">
+              A research workflow that connects behavioural signals
+              with supportive tools.
+            </p>
+          </div>
+
+        </div>
+
+        <ol class="flow" id="flow"></ol>
+
+
+        <!-- MODEL METRICS -->
+        <div class="section-heading-row metrics-heading">
+
+          <div>
+            <p class="eyebrow">MODEL SNAPSHOT</p>
+
+            <h2>What the current research shows</h2>
+
+            <p class="section-subtitle">
+              Evaluation metrics from held-out participants,
+              not a personal health score.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="grid metrics-grid" id="kpis">
+
+          <div class="card loading-card">
+            Loading model summary…
+          </div>
+
+        </div>
+
+        <div class="note" id="honest">
+          MindSathi is a research prototype. It does not diagnose depression.
+        </div>
+
+      </section>
+
+
+
+      <!-- ================= TODAY ================= -->
+      <section id="v-today" class="view-section">
+
+        <div class="page-heading compact-heading">
+
+          <div>
+            <p class="eyebrow">DAILY REFLECTION</p>
+
+            <h1>Check in with yourself.</h1>
+
+            <p class="page-subtitle" id="greet">
+              A quick daily check-in.
+              Your trend is compared with your own earlier days.
+            </p>
+          </div>
+
+          <span class="page-mark" aria-hidden="true">✿</span>
+
+        </div>
+
+
+        <div class="grid today-grid">
+
+
+          <!-- MOOD CHECK-IN CARD -->
+          <div class="card checkin-card">
+
+            <div class="card-heading-inline">
+
+              <div>
+                <span class="card-kicker">TODAY'S CHECK-IN</span>
+
+                <h2>How are things feeling?</h2>
+
+                <p class="card-description">
+                  Choose the number that feels closest.
+                  There are no right or wrong answers.
+                </p>
+              </div>
+
+              <span class="time-pill">~ 1 minute</span>
+
+            </div>
+
+
+            <!-- MOOD -->
+            <div class="question-block">
+
+              <div class="question-title">
+
+                <span class="question-number">01</span>
+
+                <div>
+                  <h3>Mood today</h3>
+                  <p>How would you describe your mood?</p>
+                </div>
+
+              </div>
+
+              <div class="scale" id="mood"
+                   role="group" aria-label="Mood today">
+              </div>
+
+              <div class="scale-caption">
+                <span>Very low</span>
+                <span>Very good</span>
+              </div>
+
+            </div>
+
+
+            <!-- LONELINESS -->
+            <div class="question-block last-question">
+
+              <div class="question-title">
+
+                <span class="question-number lavender-number">02</span>
+
+                <div>
+                  <h3>Loneliness today</h3>
+                  <p>How much have you felt alone or disconnected?</p>
+                </div>
+
+              </div>
+
+              <div class="scale lavender-scale" id="lonely"
+                   role="group" aria-label="Loneliness today">
+              </div>
+
+              <div class="scale-caption">
+                <span>Not at all</span>
+                <span>A lot</span>
+              </div>
+
+            </div>
+
+
+            <div class="save-row">
+
+              <button class="btn btn-primary" id="save" type="button">
+                Save my check-in
+                <span aria-hidden="true">→</span>
+              </button>
+
+              <span id="saved"
+                    aria-live="polite"
+                    class="inline-feedback">
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <!-- MOOD CHART -->
+          <div class="card chart-card">
+
+            <div class="card-heading-inline">
+
+              <div>
+                <span class="card-kicker">YOUR PATTERNS</span>
+
+                <h2>Your recent rhythm</h2>
+
+                <p class="card-description">
+                  A view of your check-ins over time.
+                </p>
+              </div>
+
+              <span class="chart-period">21 days</span>
+
+            </div>
+
+
+            <div id="chart" class="chart-area">
+              <p class="empty-state">
+                Your check-ins will appear here.
+              </p>
+            </div>
+
+
+            <div class="chart-legend">
+
+              <span>
+                <i class="legend-dot mood-dot"></i>
+                Mood
+              </span>
+
+              <span>
+                <i class="legend-dot lonely-dot"></i>
+                Loneliness
+              </span>
+
+            </div>
+
+
+            <div class="gentle-nudge" id="nudge">
+              Add a few check-ins to begin seeing your own pattern.
+            </div>
+
+            <p class="chart-footnote">
+              This is a personal reflection aid, not a clinical measure.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+<!-- ================= PHQ-9 ASSESSMENT ================= -->
+
+<section id="v-assessment" class="view-section">
+
+  <div class="page-heading compact-heading">
+
+    <div>
+      <p class="eyebrow">PERSONAL WELLNESS CHECK-IN</p>
+
+      <h1>Understand how you've been feeling.</h1>
+
+      <p class="page-subtitle">
+        Take a moment to reflect on the last two weeks.
+        Answer each question as honestly as you can.
+      </p>
+    </div>
+
+    <span class="page-mark lavender-mark" aria-hidden="true">♡</span>
+
+  </div>
+
+
+  <!-- INTRODUCTION -->
+
+  <div class="phq-intro-card">
+
+    <div class="phq-intro-icon" aria-hidden="true">✿</div>
+
+    <div class="phq-intro-content">
+
+      <span class="card-kicker">PATIENT HEALTH QUESTIONNAIRE</span>
+
+      <h2>PHQ-9 Assessment</h2>
+
+      <p>
+        This questionnaire contains nine questions about experiences
+        that may affect your mood and everyday life.
+      </p>
+
+      <div class="phq-info-row">
+
+        <span>◷ About 3–5 minutes</span>
+        <span>9 questions</span>
+        <span>Previous 2 weeks</span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- IMPORTANT INFORMATION -->
+
+  <div class="phq-disclaimer">
+
+    <span class="phq-info-icon" aria-hidden="true">i</span>
+
+    <p>
+      <strong>Before you begin</strong>
+
+      This is a screening questionnaire, not a diagnosis.
+      Your responses are processed in this browser and are not
+      saved to the application's database in this prototype.
+      A qualified healthcare professional can help interpret
+      your results.
+    </p>
+
+  </div>
+
+
+  <!-- QUESTIONNAIRE CONTAINER -->
+
+  <div id="phq-form" class="phq-form">
+
+    <!-- PROGRESS -->
+
+    <div class="phq-progress-header">
+
+      <div>
+        <span class="card-kicker">YOUR ASSESSMENT</span>
+
+        <h2 id="phq-step-label">Question 1 of 9</h2>
+      </div>
+
+      <span id="phq-progress-percent">11%</span>
+
+    </div>
+
+
+    <div
+      class="phq-progress-track"
+      role="progressbar"
+      aria-label="Questionnaire progress"
+      aria-valuemin="0"
+      aria-valuemax="9"
+      aria-valuenow="1"
+      id="phq-progress-bar"
+    >
+      <div id="phq-progress-fill"></div>
+    </div>
+
+
+    <!-- QUESTION WILL BE RENDERED HERE BY JAVASCRIPT -->
+
+    <div id="phq-question" class="phq-question-area"></div>
+
+
+    <!-- QUESTION ERROR -->
+
+    <p
+      id="phq-error"
+      class="phq-error"
+      role="alert"
+      aria-live="polite"
+    ></p>
+
+
+    <!-- NAVIGATION BUTTONS -->
+
+    <div class="phq-navigation">
+
+      <button
+        id="phq-previous"
+        class="btn btn-outline"
+        type="button"
+        disabled
+      >
+        ← Previous
+      </button>
+
+      <button
+        id="phq-next"
+        class="btn btn-primary"
+        type="button"
+        disabled
+      >
+        Next question →
+      </button>
+
+      <button
+        id="phq-submit"
+        class="btn btn-primary"
+        type="button"
+        hidden
+      >
+        View my results →
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- RESULTS: HIDDEN UNTIL SUBMISSION -->
+
+  <div id="phq-result" class="phq-result" hidden>
+
+    <div class="phq-result-header">
+
+      <span class="card-kicker">YOUR ASSESSMENT SUMMARY</span>
+
+      <h2>Your responses have been recorded for this session.</h2>
+
+      <p>
+        Here is a summary of your PHQ-9 responses.
+      </p>
+
+    </div>
+
+
+    <!-- SCORE CARD -->
+
+    <div class="phq-score-card">
+
+      <div class="phq-score-circle">
+
+        <span id="phq-score">0</span>
+        <small>out of 27</small>
+
+      </div>
+
+      <div class="phq-score-description">
+
+        <span class="card-kicker">SYMPTOM SCORE RANGE</span>
+
+        <h3 id="phq-severity">Not calculated</h3>
+
+        <p id="phq-score-message">
+          Your result will appear here.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- SAFETY SUPPORT: DISPLAYED WHEN ITEM 9 IS POSITIVE -->
+
+    <div
+      id="phq-safety-panel"
+      class="phq-safety-panel"
+      hidden
+      role="alert"
+    >
+
+      <div class="safety-panel-icon" aria-hidden="true">♡</div>
+
+      <div>
+
+        <h3>Your safety matters.</h3>
+
+        <p>
+          You indicated that thoughts about being better off dead
+          or hurting yourself have occurred. You deserve support
+          from a real person. Please consider reaching out to
+          someone you trust and contacting a qualified professional.
+        </p>
+
+        <p>
+          <strong>Tele-MANAS (India):</strong>
+          Free, 24-hour mental health support.
+        </p>
+
+        <a href="tel:14416" class="safety-call-link">
+          Call 14416 →
+        </a>
+
+        <p class="safety-emergency">
+          If you are in immediate danger, call
+          <a href="tel:112">112</a>
+          or go to the nearest emergency department.
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- PERSONALIZED NEXT STEPS -->
+
+<div class="phq-recommendations">
+
+  <div class="phq-recommendation-heading">
+    <span class="card-kicker">PERSONALIZED WELLNESS GUIDANCE</span>
+    <h2>What could help you next?</h2>
+    <p>
+      These suggestions are based on your responses.
+      Choose the steps that feel manageable for you.
+    </p>
+  </div>
+
+  <div id="phq-recommendation-list"
+       class="phq-recommendation-list">
+  </div>
+
+  <div id="phq-followup" class="phq-followup"></div>
+
+</div>
+
+    <!-- RESULT DISCLAIMER -->
+
+    <div class="phq-result-note">
+
+      <strong>Remember:</strong>
+
+      This score reflects your reported experiences over the
+      previous two weeks. It does not establish a diagnosis.
+      Please discuss concerns or persistent symptoms with
+      a qualified healthcare professional.
+
+    </div>
+
+
+    <!-- ACTIONS -->
+
+    <div class="phq-result-actions">
+
+      <button
+        id="phq-retake"
+        class="btn btn-outline"
+        type="button"
+      >
+        Retake assessment
+      </button>
+
+      <button
+        id="phq-done"
+        class="btn btn-primary"
+        type="button"
+      >
+        Back to overview →
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- PRIVACY NOTE -->
+
+  <p class="phq-privacy-note">
+    <span aria-hidden="true">🔒</span>
+    Your answers are held in browser memory only.
+    Refreshing or closing the page clears this assessment session.
+  </p>
+
+</section>
+
+      <!-- ================= SAATHI CHAT ================= -->
+      <section id="v-talk" class="view-section">
+
+        <div class="page-heading compact-heading">
+
+          <div>
+            <p class="eyebrow">A SPACE TO TALK</p>
+
+            <h1>Saathi is listening.</h1>
+
+            <p class="page-subtitle">
+              Share as much or as little as you like.
+              You can write or use your voice.
+            </p>
+          </div>
+
+          <span class="page-mark lavender-mark" aria-hidden="true">♡</span>
+
+        </div>
+
+
+        <div class="chat-card">
+
+
+          <!-- CHAT HEADER -->
+          <div class="chat-header">
+
+            <div class="saathi-avatar" aria-hidden="true">स</div>
+
+            <div class="chat-identity">
+
+              <strong>Saathi <span>AI</span></strong>
+
+              <small>
+                Your listen-first companion · English, Hindi & Hinglish
+              </small>
+
+            </div>
+
+            <div class="chat-header-actions">
+
+              <span class="listening-status">
+                <i></i>
+                Here to listen
+              </span>
+
+              <button id="clear-chat" class="text-button" type="button">
+                Clear chat
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <!-- CHAT MESSAGES -->
+          <div id="log"
+               class="chat-log"
+               role="log"
+               aria-live="polite"
+               aria-relevant="additions">
+          </div>
+
+
+          <!-- SUGGESTED PROMPTS -->
+          <div class="prompt-area">
+
+            <p class="prompt-label">
+              NOT SURE WHERE TO START?
+            </p>
+
+            <div class="chips" id="chips"></div>
+
+          </div>
+
+
+          <!-- MESSAGE INPUT -->
+          <div class="composer">
+
+            <label for="msg" class="sr">
+              Message Saathi
+            </label>
+
+            <input
+              type="text"
+              id="msg"
+              placeholder="Write what is on your mind…"
+              autocomplete="off"
+              maxlength="1000"
+            >
+
+            <button
+              class="icon-button"
+              id="mic"
+              type="button"
+              aria-label="Speak your message"
+              title="Speak"
+            >
+              <span aria-hidden="true">◖</span>
+            </button>
+
+            <button class="btn btn-primary send-button"
+                    id="send" type="button">
+              Send
+              <span aria-hidden="true">↑</span>
+            </button>
+
+          </div>
+
+
+          <!-- CHAT FOOTER -->
+          <div class="chat-footer">
+
+            <label class="toggle-label">
+              <input type="checkbox" id="speak">
+              <span class="toggle-ui"></span>
+              Read replies aloud
+            </label>
+
+            <span>
+              Saathi is an AI companion, not a therapist.
+            </span>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ================= RISK INSIGHTS ================= -->
+      <section id="v-insights" class="view-section">
+
+        <div class="page-heading compact-heading">
+
+          <div>
+            <p class="eyebrow">UNDERSTANDING THE MODEL</p>
+
+            <h1>Risk insights.</h1>
+
+            <p class="page-subtitle">
+              Explore how the research model's estimates
+              and contributing factors are presented.
+            </p>
+          </div>
+
+          <span class="page-mark amber-mark" aria-hidden="true">⌁</span>
+
+        </div>
+
+
+        <div class="research-notice">
+
+          <span class="notice-icon" aria-hidden="true">i</span>
+
+          <p>
+            <strong>
+              These are simulated research examples, not your personal result.
+            </strong>
+
+            <br>
+
+            Cards replay held-out test participants.
+            MindSathi does not yet calculate an individual
+            risk estimate from this screen.
+          </p>
+
+        </div>
+
+
+        <div id="insights" class="grid insights-grid">
+
+          <div class="card loading-card">
+            Loading research examples…
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ================= HELP NOW ================= -->
+      <section id="v-help" class="view-section">
+
+        <div class="page-heading compact-heading">
+
+          <div>
+            <p class="eyebrow">SUPPORT WHEN YOU NEED IT</p>
+
+            <h1>You do not have to do this alone.</h1>
+
+            <p class="page-subtitle">
+              When things feel difficult or urgent,
+              reaching a real person matters.
+            </p>
+          </div>
+
+          <span class="page-mark help-mark" aria-hidden="true">✚</span>
+
+        </div>
+
+
+        <div class="help-intro">
+
+          <span class="help-icon" aria-hidden="true">♡</span>
+
+          <div>
+            <strong>Need immediate support?</strong>
+
+            <p>
+              If you may be in immediate danger,
+              call emergency services or go to the nearest
+              emergency department.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="grid help-grid" id="helpbox">
+
+          <div class="card loading-card">
+            Loading support information…
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ================= PRIVACY ================= -->
+      <section id="v-privacy" class="view-section">
+
+        <div class="page-heading compact-heading">
+
+          <div>
+            <p class="eyebrow">YOUR INFORMATION</p>
+
+            <h1>Privacy, with clarity.</h1>
+
+            <p class="page-subtitle">
+              Here is what this research prototype stores
+              and what it does not.
+            </p>
+          </div>
+
+          <span class="page-mark privacy-mark" aria-hidden="true">◇</span>
+
+        </div>
+
+
+        <div class="grid privacy-grid">
+
+
+          <!-- CHECK-IN PRIVACY -->
+          <div class="card privacy-card">
+
+            <span class="privacy-icon">◷</span>
+
+            <h2>Daily check-ins</h2>
+
+            <p>
+              Mood and loneliness check-ins are saved in a local
+              SQLite database on the machine running the app.
+              The prototype database is <strong>not encrypted</strong>.
+            </p>
+
+            <span class="privacy-tag">Stored by this app</span>
+
+          </div>
+
+
+          <!-- CHAT PRIVACY -->
+          <div class="card privacy-card">
+
+            <span class="privacy-icon lavender-icon">♡</span>
+
+            <h2>Saathi conversations</h2>
+
+            <p>
+              Chat text is sent to the server to generate a reply
+              but is not written to the app's SQLite check-in database.
+              The current conversation is held in this page's memory.
+            </p>
+
+            <span class="privacy-tag lavender-tag">
+              Not saved as chat history
+            </span>
+
+          </div>
+
+
+          <!-- SHARING PRIVACY -->
+          <div class="card privacy-card">
+
+            <span class="privacy-icon amber-icon">⇢</span>
+
+            <h2>Family or caregiver sharing</h2>
+
+            <p>
+              Sharing is <strong>not available</strong> in this prototype.
+              No weekly summaries are sent to family members or caregivers.
+            </p>
+
+            <span class="privacy-tag amber-tag">Not active</span>
+
+          </div>
+
+        </div>
+
+
+        <!-- DELETE DATA -->
+        <div class="card delete-card">
+
+          <div>
+
+            <span class="card-kicker">DATA CONTROL</span>
+
+            <h2>Delete your check-in data</h2>
+
+            <p class="card-description">
+              This removes check-ins and saved settings from this app's
+              local database on the machine running it.
+            </p>
+
+          </div>
+
+          <div class="delete-action">
+
+            <button class="btn btn-danger-outline"
+                    id="wipe" type="button">
+              Delete my data
+            </button>
+
+            <span id="wiped"
+                  aria-live="polite"
+                  class="inline-feedback">
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="privacy-warning">
+
+          <strong>Please note:</strong>
+
+          This is a research prototype and is not ready for storing
+          real clinical or highly sensitive health information.
+          Do not enter information you would not want handled
+          by an experimental application.
+
+        </div>
+
+      </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="app-footer">
+      MindSathi AI · Research prototype · Screening support, not diagnosis.
+    </footer>
+
+  </div>
+
+</div>
+
+
+<script src="app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+{
+  "validation_auc": {
+    "logistic": 0.7523,
+    "hist_gb": 0.7556,
+    "xgboost": 0.7529
+  },
+  "note": "Screening risk indicator, not a diagnosis.",
+  "baseline_start_score_only": {
+    "validation_auc": 0.8823
+  },
+  "chosen_model": "xgboost",
+  "test": {
+    "roc_auc": 0.7758,
+    "pr_auc": 0.6146,
+    "brier": 0.1696,
+    "macro_f1_at_moderate_threshold": 0.6834,
+    "baseline_start_score_only_auc": 0.8869,
+    "n_rows": 1626,
+    "positive_rate": 0.3173,
+    "beats_baseline": false,
+    "share_by_level": {
+      "low": 0.574,
+      "moderate": 0.207,
+      "high": 0.219
+    }
+  },
+  "fairness_auc_by_group": {
+    "race_asian=0": {
+      "n": 1558,
+      "auc": 0.7793
+    },
+    "race_asian=1": {
+      "n": 68,
+      "auc": 0.6719
+    },
+    "race_black=0": {
+      "n": 1531,
+      "auc": 0.7711
+    },
+    "race_black=1": {
+      "n": 95,
+      "auc": 0.8679
+    },
+    "race_hispanic=0": {
+      "n": 1548,
+      "auc": 0.7711
+    },
+    "race_hispanic=1": {
+      "n": 78,
+      "auc": 0.8635
+    },
+    "race_other=0": {
+      "n": 1563,
+      "auc": 0.7717
+    },
+    "race_other=1": {
+      "n": 63,
+      "auc": 0.8266
+    },
+    "race_white=1": {
+      "n": 1413,
+      "auc": 0.7633
+    },
+    "race_white=0": {
+      "n": 213,
+      "auc": 0.8731
+    },
+    "sex=0": {
+      "n": 1244,
+      "auc": 0.7575
+    },
+    "sex=1": {
+      "n": 379,
+      "auc": 0.758
+    }
+  }
+}
